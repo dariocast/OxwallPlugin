@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <name>AAAPlugin</name>
+    <key>aaaplugin</key>
+    <description>plugin che serve per provare widgets</description>
+    <author>Dario Castellano</author>
+    <authorEmail>aquila1994@hotmail.it</authorEmail>
+    <authorUrl>http://dariocast.byethost10.com</authorUrl>
+    <developerKey>a56a0e36bf00931c71952636df649b0e</developerKey>
+    <build>1</build>
+    <copyright>(C) 2009 Oxwall Foundation. All rights reserved.</copyright>
+    <license>The BSD License</license>
+    <licenseUrl>http://www.opensource.org/licenses/bsd-license.php</licenseUrl>
+</plugin>
