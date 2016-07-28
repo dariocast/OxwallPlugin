@@ -12,25 +12,21 @@
  */
 class LIKECOUNTER_CMP_Likes extends BASE_CLASS_Widget{
     private $myLikeAmount;
-    private $newsfeedService;
-    private $surfer;
+    private $finder;
     private $userId;
     private $likesOnMyActions;
 
     public function __construct(BASE_CLASS_WidgetParameter $paramObject) {
         parent::__construct();
-        
-        //service del plugin newsfeed
-        $this->newsfeedService = NEWSFEED_BOL_Service::getInstance();
 
         //user id
         $this->userId = $paramObject->additionalParamList['entityId']; //OW::getUser()->getId();
 
         //trovo i like dell'utente
-        $this->myLikeAmount = count($this->newsfeedService->findUserLikes($this->userId));
+        $this->myLikeAmount = $this->finder->getMyLikes($this->userId);
 
-        $this->surfer = new LIKECOUNTER_CLASS_Surfer();
-        $this->likesOnMyActions = $this->surfer->getLikes($this->userId);
+        $this->finder = new LIKECOUNTER_CLASS_Finder();
+        $this->likesOnMyActions = $this->finder->getLikes($this->userId);
         //tutte le azioni dell'utente
         /*$actions = $this->newsfeedService->findActionsByUserId($this->userId);
         $this->likesOnMyActions = 0;
